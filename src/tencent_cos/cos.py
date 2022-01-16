@@ -1,6 +1,5 @@
-from qcloud_cos import CosConfig, CosS3Client, CosServiceError
-
 from loguru import logger as log
+from qcloud_cos import CosConfig, CosS3Client, CosServiceError
 
 
 class TencentCos(object):

@@ -1,6 +1,6 @@
 # pkg
-Useful package or module for lzwang.
 
+Useful package or module for lzwang.
 
 ## getting started
 

@@ -2,11 +2,10 @@ import os
 from urllib.parse import quote
 
 from loguru import logger as log
-from qcloud_cos import CosServiceError
-
 from pkg.tencent_cos.cos import TencentCos
 from pkg.tencent_cos.exceptions import CosBucketDirNotFoundError
 from pkg.utils.file_tools import get_file_md5sum
+from qcloud_cos import CosServiceError
 
 REGIONS = ['nanjing', 'chengdu', 'beijing', 'guangzhou', 'shanghai', 'chongqing', 'hongkong']
 

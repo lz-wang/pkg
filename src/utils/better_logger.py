@@ -31,7 +31,7 @@ def add_log_to_file(log_dir: str):
 
 
 def show_log_msgs():
-    logger.warning('*'*50)
+    logger.warning('*' * 50)
     logger.trace('This is a test TRACE message.')
     logger.debug('This is a test DEBUG message.')
     logger.info('This is a test INFO message.')
@@ -39,7 +39,7 @@ def show_log_msgs():
     logger.warning('This is a test WARNING message.')
     logger.error('This is a test ERROR message.')
     logger.critical('This is a test CRITICAL message.')
-    logger.warning('*'*50)
+    logger.warning('*' * 50)
 
 
 def init_logger(log_dir: str = None):

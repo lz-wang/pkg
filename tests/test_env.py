@@ -1,5 +1,6 @@
-from env import PROJECT_ROOT, TEST_ROOT, SRC_ROOT
 from pathlib import Path
+
+from env import PROJECT_ROOT, TEST_ROOT, SRC_ROOT
 
 
 def test_env():

@@ -1,6 +1,7 @@
-from src.utils.file_tools import is_image_file, find_files
-from env import TEST_DATA_ROOT
 import os
+
+from env import TEST_DATA_ROOT
+from src.utils.file_tools import is_image_file, find_files
 
 
 def test_is_image_file():

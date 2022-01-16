@@ -1,10 +1,11 @@
 import hashlib
 import os.path
 import pathlib
-import chardet
 from functools import partial
-from loguru import logger as log
 from pathlib import Path
+
+import chardet
+from loguru import logger as log
 
 
 def get_file_md5sum(file_path: str):
