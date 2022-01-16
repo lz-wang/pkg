@@ -1,5 +1,7 @@
+autopep8
+chardet
 cos-python-sdk-v5
+loguru
 pyside6
 pydantic
-loguru
-chardet
+pytest
