@@ -4,6 +4,7 @@ import pathlib
 import chardet
 from functools import partial
 from loguru import logger as log
+from pathlib import Path
 
 
 def get_file_md5sum(file_path: str):
@@ -55,3 +56,38 @@ def get_encoding(file: str):
     log.info(f'file: {file}, {detector.result}')
 
     return detector.result.get('encoding')
+
+
+def find_files(target_path: str,
+               ignore_hidden_file=True,
+               ignore_hidden_dir=True) -> list:
+    """获取指定目录及其子目录下的所有文件列表
+
+    Args:
+        target_path: 指定的目录
+        ignore_hidden_file: 是否忽略隐藏文件
+        ignore_hidden_dir: 是否忽略隐藏文件夹
+
+    Returns:
+        指定目录及其子目录下的文件列表
+    """
+    if not os.path.exists(target_path):
+        return []
+
+    if os.path.isdir(target_path):
+        file_list = []
+        for root, dirs, files in os.walk(target_path):
+            rp = Path(root)
+            if ignore_hidden_dir and rp.name.startswith('.'):
+                continue
+            for file in files:
+                if ignore_hidden_file:
+                    if not file.startswith('.'):
+                        file_list.append(os.path.join(root, file))
+                else:
+                    file_list.append(os.path.join(root, file))
+
+        return file_list
+
+    if os.path.isfile(target_path):
+        return [target_path]
